@@ -22,7 +22,7 @@ class ApplicationController < Sinatra::Base
   else
     binding.pry
     recipe.save
-    redirect "/recipes/:id"
+    redirect "/recipes/#{recipe.id}"
     end
   end
 
