@@ -10,16 +10,16 @@ class ApplicationController < Sinatra::Base
   erb :index
   end
 
+  get '/recipes/new' do
+    binding.pry
+    erb :recipe
+  end
 
   get '/recipes/:id' do
     @recipe = Recipe.find_by_id(params[:id])
     erb :show
   end
 
-  get '/recipes/new' do
-    binding.pry
-    erb :recipe
-  end
 
   post "/recipes" do
   recipe = Recipe.new(:name => params[:name], :ingredients => params[:ingredients], :cook_time => params[:cook_time])
