@@ -16,7 +16,6 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/recipes" do
-    binding.pry
   recipe = Recipe.new(:name => params[:name], :ingredients => params[:ingredients], :cook_time => params[:cook_time])
 
   if params[:user] == "" || params[:ingredients] == "" || params[:cook_time] == ""
@@ -34,6 +33,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/recipes/new' do
+    binding.pry
     erb :recipe
   end
 
