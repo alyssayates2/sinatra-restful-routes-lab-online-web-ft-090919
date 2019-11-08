@@ -36,6 +36,8 @@ class ApplicationController < Sinatra::Base
     erb :show
   end
 
-  
+  patch '/recipes/:id' do
+    
+  end
 
 end
