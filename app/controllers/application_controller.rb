@@ -20,6 +20,7 @@ class ApplicationController < Sinatra::Base
   if params[:user] == "" || params[:ingredients] == "" || params[:cook_time] == ""
     redirect "/failure"
   else
+    binding.pry
     recipe.save
     redirect "/index"
     end
